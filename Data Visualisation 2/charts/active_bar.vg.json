@@ -1,0 +1,19 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background":"aliceblue",
+    "title": { "text": "Active cases per region" },
+    "data": {
+        "url": "data/country_wise_latest.csv"
+    },
+    "width": 300,
+
+    "mark": "bar",
+
+    "encoding": {
+        
+        "y": { "field": "Active", "type": "quantitative", "title":"Active cases"},
+        "x": { "field": "WHO Region", "type": "nominal", "title": null},
+        "color": {"value": "#1ecebf"}
+
+    }
+}

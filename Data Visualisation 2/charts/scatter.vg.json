@@ -1,0 +1,141 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "title": "Latest COVID-19 statistics per country",
+    "data": {
+      "url": "data/country_wise_latest.csv"
+    },
+    "params": [
+  
+      {
+        "name": "Continent_selection",
+        "bind": {
+            
+          "input": "select",
+          
+          "options": [
+            null,
+            "Africa",
+            "Americas",
+            "Eastern Mediterranean",
+            "Europe",
+            "South-East Asia",
+            "Western Pacific"
+          ],
+          "labels": [
+            "Show All",
+            "Africa",
+            "Americas",
+            "Eastern Mediterranean",
+            "Europe",
+            "South-East Asia",
+            "Western Pacific"
+          ],
+          "name": "Continent Selection: " 
+          
+        }
+      }
+    ],
+
+    "transform": [
+        {"filter": "datum.Active > 0"},
+        {"filter": "datum.Deaths > 0"},
+        {
+          "filter": "Continent_selection == null || datum['WHO Region'] == Continent_selection"
+        }
+        
+      ],
+
+    "encoding": {
+      "x": {
+        "field": "Active",
+        "type": "quantitative",
+        "title": "Active Cases",
+        "axis": {"tickCount": 7},
+        "scale": {"type": "log", "domain": [1, 50000000]}
+      },
+      "y": {
+        "field": "Deaths",
+        "type": "quantitative",
+        "axis": {"tickCount": 6},
+        "scale": {"type": "log", "domain": [1, 1000000]}
+      }
+    },
+    "layer": [
+      {
+        "mark": "circle",
+        "encoding": {
+          "size": {
+            "field": "Recovered",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [5000, 10000, 300000, 1000000, 1500000],
+              "range": [30, 50, 150, 200, 300, 500]
+            },
+            "legend": {"format": ".2s"}
+          },
+          "color": {
+            "field": "WHO Region",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Africa",
+                "Americas",
+                "Eastern Mediterranean",
+                "Europe",
+                "South-East Asia",
+                "Western Pacific"
+              ],
+              "range": [
+                "#e41a1c",
+                "#984ea3",
+                "#ff7f00",
+                "#a6cee3",
+                "#377eb8",
+                "#a65628"
+              ]
+            }
+          },
+          "opacity": {"value": 0.6},
+          "tooltip": [
+            {"field": "Country/Region", "type": "nominal"},
+            {"field": "Confirmed", "type": "quantitative", "format": ","},
+            {"field": "Active", "type": "quantitative", "format": ","},
+            {"field": "Deaths", "type": "quantitative", "format": ","},
+            {"field": "Recovered", "type": "quantitative", "format": ","}
+            
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "Country/Region", "type": "nominal"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['Country/Region'] == 'China' || datum['Country/Region'] == 'Singapore' || datum['Country/Region'] == 'Australia' || datum['Country/Region'] == 'New Zealand' || datum['Country/Region'] == 'Italy' || datum['Country/Region'] == 'Yemen' ||  datum['Country/Region'] == 'United State of America'",
+              "value": 1
+            },
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "Country/Region", "type": "nominal"},
+            {"field": "Confirmed", "type": "quantitative", "format": ","},
+            {"field": "Active", "type": "quantitative", "format": ","},
+            {"field": "Deaths", "type": "quantitative", "format": ","},
+            {"field": "Recovered", "type": "quantitative", "format": ","}
+            ]
+        }
+      }
+    ]
+  }

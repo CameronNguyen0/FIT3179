@@ -1,0 +1,18 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Deaths per region" },
+    "background":"aliceblue",
+    "data": {
+        "url": "data/country_wise_latest.csv"
+    },
+    "width": 300,
+    "mark": "bar",
+    "encoding": {
+        "y": { "field": "Deaths", "type": "quantitative", "title":"Deaths"},
+        "x": { "field": "WHO Region", "type": "nominal", "title": null},
+        "color": {"value": "#1ecebf"}
+    }
+    
+    
+}
+    

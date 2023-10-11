@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Multiple Visualisations | An Example</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="head">
+      
+      <h1>The rise of COVID-19</h1>
+      <p >(22/1/2020 - 27/7/2020)</p>
+      
+    </div>
+    <!-- end pure grid group -->
+
+    <div class="map" style="margin-left: 40px;" >
+      <div id="vis1" class="map-container"   ></div>
+    </div>
+
+    <!-- pure grid group -->
+
+    <div class="map-description">
+      <h2 style="margin-bottom: 20px;">First year of Covid</h2>
+      <p style="margin-bottom: 20px;">COVID-19, caused by the severe acute respiratory syndrome coronavirus-2 (SARS-CoV-2), 
+        was declared a pandemic by the World Health Organization (WHO) on the 11th of March 2020,
+         leading to some form of lockdown across almost all countries of the world.  </p>
+      <p>In 2020 COVID-19 affected almost all countries and more than 50 million people around the world.
+         It has governments operating in a context of radical uncertainty, and faced with difficult trade-offs
+          given the health, economic and social challenges it raises.</p>
+    </div>
+
+    <div id="vis5" class="bubble" style="margin-bottom: 50px;"></div>
+    
+    
+    <!-- end pure grid group -->
+  
+
+
+  <!-- pure grid group -->
+    <div class="pure-g" >
+      <div class="pure-u-1-2">
+        <div id="vis4" class="vis-container" style="margin-left: 50px "></div>
+      </div>
+      <div class="pure-u-1-2" >
+        <div id="vis3" class="vis-container" style="margin-left: 30px"></div>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+    
+
+    <!-- pure grid group -->
+    <div class="pure-g" >
+      <div class="pure-u-2-3">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="a" style="padding-right: 50px;">
+          
+          <p>By April 2020, about half of the world's population was under some form of lockdown,
+             with more than 3.9 billion people in more than 90 countries or territories having been
+            asked or ordered to stay at home by their governments</p>
+          <p style="margin-top: 20px;">Research and case studies have shown that lockdowns were generally effective at reducing the spread of COVID-19, therefore flattening the curve.</p>
+        </div>
+      </div>
+
+    </div>
+   
+
+
+
+
+  <script type="text/javascript">
+    var specVis1 = "charts/map.vg.json";
+    var specVis2 = "charts/line.vg.json";
+    var specVis3 = "charts/active_bar.vg.json";
+    var specVis4 = "charts/deaths_bar.vg.json";
+    var specVis5 = "charts/scatter.vg.json";
+
+
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+
+</body>
+
+</html>

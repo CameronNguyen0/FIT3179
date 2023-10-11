@@ -1,0 +1,78 @@
+.head {
+  text-align: center;
+  align-items: center;
+  font-family:helvetica;
+  margin:0;
+
+ 
+}
+body *{
+  font-family:helvetica;
+  margin: auto;
+  
+}
+  
+  
+  
+  body {
+    background-image:url("photo.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+  }
+  
+
+  .page {
+    width: 1100px;
+    margin: auto;
+    padding: 50px;
+    box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
+    background-color:aliceblue;
+    height: 2000px;
+  }
+  
+  .bubble *{
+   margin-left: 190px;
+   
+  }
+  
+  .vis-container {
+    width: 100%;
+  }
+  
+  .map-container{
+    align-items: center;
+    margin-top: 50px;
+
+  }
+  
+  .description-right {
+    padding-left: 20px;
+  }
+  
+  .map-description {
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+  }
+
+  .bar-description {
+    padding-right: 100px;
+  }
+  
+  .pure-g {
+    margin-bottom: 70px;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .small-font {
+    font-size: 14px;
+  }
+
+  

@@ -25,23 +25,27 @@
 </head>
 
 <body>
-  <div class="page">
+  <div class="space" style="padding: 20px;"> </div>
 
-    <!-- pure grid group -->
+    <!-- Header -->
+  <div class="page">
     <div class="head">
-      
       <h1>The rise of COVID-19</h1>
       <p >(22/1/2020 - 27/7/2020)</p>
-      
     </div>
-    <!-- end pure grid group -->
+  </div>
 
-    <div class="map" style="margin-left: 0px;" >
-      <div id="vis1" class="map-container"   ></div>
-    </div>
+  <div class="space" style="padding: 20px;"> </div>
 
-    <!-- pure grid group -->
+    <!-- Map -->
+  <div class="map"  >
+    <div id="vis1" class="map-container"   ></div>
+  </div>
 
+  <div class="space" style="padding: 20px;"> </div>
+
+    <!-- Bubble -->
+  <div class="page">
     <div class="map-description">
       <h2 style="margin-bottom: 20px;">First year of Covid</h2>
       <p style="margin-bottom: 20px;">COVID-19, caused by the severe acute respiratory syndrome coronavirus-2 (SARS-CoV-2), 
@@ -53,13 +57,12 @@
     </div>
 
     <div id="vis5" class="bubble" style="margin-bottom: 50px;"></div>
+  </div> 
     
-    
-    <!-- end pure grid group -->
-  
+  <div class="space" style="padding: 20px;"> </div>
 
-
-  <!-- pure grid group -->
+    <!-- Bars -->
+  <div class = "page">
     <div class="pure-g" >
       <div class="pure-u-1-2">
         <div id="vis4" class="vis-container" style="margin-left: 50px "></div>
@@ -68,11 +71,12 @@
         <div id="vis3" class="vis-container" style="margin-left: 30px"></div>
       </div>
     </div>
-  <!-- end pure grid group -->
+  </div>
 
-    
+  <div class="space" style="padding: 20px;"> </div>
 
-    <!-- pure grid group -->
+    <!-- Line -->
+  <div class = "page">
     <div class="pure-g" >
       <div class="pure-u-2-3">
         <div id="vis2" class="vis-container"></div>
@@ -86,12 +90,17 @@
           <p style="margin-top: 20px;">Research and case studies have shown that lockdowns were generally effective at reducing the spread of COVID-19, therefore flattening the curve.</p>
         </div>
       </div>
-
     </div>
-   
+   </div>
 
+   <div class="space" style="padding: 20px;"> </div>
 
+      <!-- Long Bar -->
+  <div class="critical"  >
+    <div id="vis6" class="vis-container"   ></div>
+  </div>
 
+  <div class="space" style="padding: 20px;"> </div>
 
   <script type="text/javascript">
     var specVis1 = "charts/map.vg.json";
@@ -99,6 +108,7 @@
     var specVis3 = "charts/active_bar.vg.json";
     var specVis4 = "charts/deaths_bar.vg.json";
     var specVis5 = "charts/scatter.vg.json";
+    var specVis6 = "charts/critical.vg.json";
 
 
 
@@ -119,6 +129,11 @@
     vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
+
+    vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
   </script>
 
 </body>

@@ -29,12 +29,30 @@ body *{
     padding: 50px;
     box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
     background-color:aliceblue;
-    height: 2000px;
   }
   
+  .map{
+    width: 1000px;
+    margin: auto;
+    padding-top: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
+    background-color:aliceblue;
+  }
+
+  .critical{
+    width: 1000px;
+    margin: auto;
+    padding: 50px;
+    box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
+    background-color:aliceblue;
+    overflow: scroll;
+  }
+
   .bubble *{
    margin-left: 130px;
-   
   }
   
   .vis-container {
@@ -56,7 +74,6 @@ body *{
     padding-left: 100px;
     padding-right: 100px;
     margin-bottom: 50px;
-    margin-top: 50px;
 
   }
 
@@ -65,14 +82,12 @@ body *{
   }
   
   .pure-g {
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     margin-top: 0px;
     margin-left: 20px;
     margin-right: 20px;
   }
   
-  .small-font {
-    font-size: 14px;
-  }
+
 
   

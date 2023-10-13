@@ -3,6 +3,7 @@
     "title": "COVID-19 Confirmed Cases ",
     "width": 1000,
     "height": 500,
+    
     "background":"aliceblue",
     "projection": {"type": "equalEarth"},
     "data": {
@@ -40,6 +41,10 @@
       "title": {
         "fontSize": 16
         
-      }
+      },
+      "view": {
+        "stroke": "transparent"
+     }
+     
   }
 }

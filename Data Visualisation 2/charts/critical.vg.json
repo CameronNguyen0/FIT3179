@@ -1,56 +1,26 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-      "url": "seattle-weather.csv"
+      "url": "data/worldometer_data.csv"
     },
-    "width": "container",
     "transform": [
       {
-        "calculate": "datum.temp_max - datum.temp_min",
-        "as": "temp_range"
-      }
+        "calculate": "datum.TotalDeaths / datum.TotalCases * 100 ", 
+        "as": "percent" },
+        {"filter": "datum.TotalDeaths > 0"}
+        
     ],
     "mark": "bar",
+
     "encoding": {
-      "x": {
-        "field": "Country/Region",
-        "type": "nominal",
-        "title": null
-      },
-      "y": {
-        "aggregate": "count",
-        "stack": "normalize",
-        "title": "Average 2012 to 2015",
-        "axis": {
-          "format": "%"
-        }
-      },
-      "color": {
-        "field": "weather",
-        "type": "nominal",
-        "scale": {
-          "domain": [
-            "drizzle",
-            "fog",
-            "rain",
-            "snow",
-            "sun"
-          ],
-          "range": [
-            "#aec7e8",
-            "#c7c7c7",
-            "#1f77b4",
-            "#9467bd",
-            "#e7ba52"
+        
+        "y": { "field": "percent", "type": "quantitative", "title":"Deaths Over Cases %" },
+        "x": { "field": "Country/Region", "type": "nominal", "title": null, "sort": "-y"},
+        "color": {"value": "#1ecebf"},
+        "tooltip": [
+            {"field": "Country/Region", "type": "nominal", "title": "Region"},
+            {"field": "percent", "type": "quantitative", "title":"Percentage","format":".2f" }
           ]
-        },
-        "legend": {
-          "orient": "left",
-          "offset":-15,
-          "labelExpr": "datum.label == 'sun' ? 'Sun' : datum.label == 'fog' ? 'Fog' :datum.label == 'drizzle' ? 'Drizzle' : datum.label == 'rain' ? 'Rain' : datum.label == 'snow' ? 'Snow': ''"
-        },
-        "title": "Weather Type"
-      }
-    },
-    "config": {}
-  }
+
+    }
+}

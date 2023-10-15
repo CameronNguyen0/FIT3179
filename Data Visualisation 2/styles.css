@@ -43,7 +43,7 @@ body *{
   }
 
   .critical{
-    width: 1000px;
+    max-width: 1000px;
     margin: auto;
     padding: 50px;
     box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);

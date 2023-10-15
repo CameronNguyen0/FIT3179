@@ -21,7 +21,7 @@
 
 
     "y": {
-      "field": "New cases",
+      "field": "New cases", 
       "type": "quantitative",
       "title": "New cases through time"
     },
@@ -30,7 +30,11 @@
       "type": "nominal",
       "field": "Date",
       "title": "Month"
-    }
+    },
+    "tooltip": [
+      {"field": "Country/Region", "type": "nominal", "title": "Region"},
+      {"field": "New cases", "type": "quantitative", "title":"Cases"}
+    ]
     
   },
   "config": {}

@@ -19,7 +19,10 @@
         "color": {"value": "#1ecebf"},
         "tooltip": [
             {"field": "Country/Region", "type": "nominal", "title": "Region"},
-            {"field": "percent", "type": "quantitative", "title":"Percentage","format":".2f" }
+            {"field": "percent", "type": "quantitative", "title":"Percentage","format":".2f" },
+            {"field": "TotalDeaths", "type": "nominal", "title": "Deaths","format":","},
+            {"field": "TotalCases", "type": "nominal", "title": "Cases","format":","}
+
           ]
 
     }

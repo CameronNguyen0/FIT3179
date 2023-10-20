@@ -32,7 +32,7 @@
       "title": "Month"
     },
     "tooltip": [
-      {"field": "Country/Region", "type": "nominal", "title": "Region"},
+      {"field": "Date", "timeUnit":"monthdate", "title": "Date"},
       {"field": "New cases", "type": "quantitative", "title":"Cases"}
     ]
     

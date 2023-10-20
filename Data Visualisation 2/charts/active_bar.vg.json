@@ -15,7 +15,8 @@
         "x": { "field": "WHO Region", "type": "nominal", "title": null},
         "color": {"value": "#1ecebf"},
         "tooltip": [
-            {"field": "Country/Region", "type": "nominal", "title": "Region"},
+            {"field": "Country/Region", "type": "nominal", "title": "Country"},
+            {"field": "WHO Region", "type": "nominal", "title": "Region"},
             {"field": "Active", "type": "quantitative", "title":"Cases","format": ","}
           ]
 

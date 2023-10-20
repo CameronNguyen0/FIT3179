@@ -32,7 +32,7 @@
               "color": {"value": "red"},
               "opacity": {
                 "condition": {
-                  "test": "datum['Country/Region'] == 'US'",
+                  "test": "datum['Country/Region'] == 'United States of America'",
                   "value": 1
                 },
                 "value": 0
@@ -52,7 +52,7 @@
               "color": {"value": "black"},
               "opacity": {
                 "condition": {
-                  "test": "datum['Country/Region'] == 'US'",
+                  "test": "datum['Country/Region'] == 'United States of America'",
                   "value": 1
                 },
                 "value": 0

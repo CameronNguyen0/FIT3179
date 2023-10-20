@@ -6,12 +6,35 @@
         "url": "data/country_wise_latest.csv"
     },
     "width": 300,
-    "mark": "bar",
     "encoding": {
         "y": { "field": "Deaths", "type": "quantitative", "title":"Deaths"},
         "x": { "field": "WHO Region", "type": "nominal", "title": null},
-        "color": {"value": "#1ecebf"}
-    }
+        "color": {"value": "#1ecebf"},
+        "tooltip": [
+            {"field": "Country/Region", "type": "nominal", "title": "Region"},
+            {"field": "Deaths", "type": "quantitative", "title":"Cases","format": ","}
+          ]
+    },
+    "layer":[
+        {"mark": "bar"},
+        {
+            "mark": {
+              "type": "bar"
+            },
+            "encoding": {
+              "text": {"field": "Country/Region", "type": "nominal"},
+              "color": {"value": "red"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['Country/Region'] == 'US'",
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+        }
+        
+    ]
     
     
 }

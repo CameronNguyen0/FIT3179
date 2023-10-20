@@ -6,8 +6,8 @@
         "url": "data/country_wise_latest.csv"
     },
     "width": 300,
-
-    "mark": "bar",
+    
+   
 
     "encoding": {
         
@@ -16,8 +16,49 @@
         "color": {"value": "#1ecebf"},
         "tooltip": [
             {"field": "Country/Region", "type": "nominal", "title": "Region"},
-            {"field": "Active", "type": "quantitative", "title":"Cases"}
+            {"field": "Active", "type": "quantitative", "title":"Cases","format": ","}
           ]
 
-    }
+        },
+    "layer":[
+        {"mark": "bar"},
+        {
+            "mark": {
+              "type": "bar"
+            },
+            "encoding": {
+              "text": {"field": "Country/Region", "type": "nominal"},
+              "color": {"value": "red"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['Country/Region'] == 'US'",
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+        },
+        {
+            "mark": {
+              "type": "text",
+              "align": "center",
+              "fontSize": 11.5,
+              "fontStyle": "italic"
+              
+            },
+            "encoding": {
+              "text": {"field": "Country/Region", "type": "nominal"},
+              "color": {"value": "black"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['Country/Region'] == 'US'",
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+        }
+    ]
+    
+    
 }

@@ -1,0 +1,65 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background":"aliceblue",
+    "title": { "text": "Active cases per region" },
+    "data": {
+        "url": "data/country_wise_latest.csv"
+    },
+    "width": 300,
+    
+   
+
+    "encoding": {
+        
+        "y": { "field": "Active", "type": "quantitative", "title":"Active cases"},
+        "x": { "field": "WHO Region", "type": "nominal", "title": null},
+        "color": {"value": "#1ecebf"},
+        "tooltip": [
+            {"field": "Country/Region", "type": "nominal", "title": "Country"},
+            {"field": "WHO Region", "type": "nominal", "title": "Region"},
+            {"field": "Active", "type": "quantitative", "title":"Cases","format": ","}
+          ]
+
+        },
+    "layer":[
+        {"mark": "bar"},
+        {
+            "mark": {
+              "type": "bar"
+            },
+            "encoding": {
+              "text": {"field": "Country/Region", "type": "nominal"},
+              "color": {"value": "red"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['Country/Region'] == 'US'",
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+        },
+        {
+            "mark": {
+              "type": "text",
+              "align": "center",
+              "fontSize": 11.5,
+              "fontStyle": "italic"
+              
+            },
+            "encoding": {
+              "text": {"field": "Country/Region", "type": "nominal"},
+              "color": {"value": "black"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['Country/Region'] == 'US'",
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+        }
+    ]
+    
+    
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background":"aliceblue",
+  "data": {
+    "url": "data/day_wise.csv"
+    
+  },
+  
+  "width":500,
+  
+  "mark": {
+    "type": "line"
+
+  },
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "timeUnit":"monthdate",
+      "title": "Date"
+    },
+
+
+    "y": {
+      "field": "New cases", 
+      "type": "quantitative",
+      "title": "New cases through time"
+    },
+    "color": {
+      "timeUnit": "month",
+      "type": "nominal",
+      "field": "Date",
+      "title": "Month"
+    },
+    "tooltip": [
+      {"field": "Date", "timeUnit":"monthdate", "title": "Date"},
+      {"field": "New cases", "type": "quantitative", "title":"Cases"}
+    ]
+    
+  },
+  "config": {}
+}
